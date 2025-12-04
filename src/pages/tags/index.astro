@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/global.css';
+
+const posts = await getCollection('posts', ({ data }) => !data.draft);
+
+// Count posts per tag
+const tagCounts = new Map<string, number>();
+posts.forEach((post) => {
+  post.data.tags.forEach((tag) => {
+    tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+  });
+});
+
+// Sort tags alphabetically
+const sortedTags = [...tagCounts.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+---
+
+<BaseLayout title="Tags - sw.log">
+  <h1 class="text-3xl font-bold mb-6">Tags</h1>
+
+  <div class="flex flex-wrap gap-3">
+    {
+      sortedTags.map(([tag, count]) => (
+        <a
+          href={`/tags/${tag}`}
+          class="px-3 py-1 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full text-gray-700 dark:text-gray-300 transition-colors"
+        >
+          #{tag} <span class="text-gray-500 dark:text-gray-400">({count})</span>
+        </a>
+      ))
+    }
+  </div>
+</BaseLayout>

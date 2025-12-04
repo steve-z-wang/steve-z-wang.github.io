@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Prose customizations - Light mode */
+.prose {
+  --tw-prose-body: theme(colors.gray.700);
+  --tw-prose-headings: theme(colors.gray.900);
+  --tw-prose-links: theme(colors.blue.600);
+  --tw-prose-code: theme(colors.gray.800);
+}
+
+/* Prose customizations - Dark mode */
+.dark .prose {
+  --tw-prose-body: theme(colors.gray.300);
+  --tw-prose-headings: theme(colors.gray.100);
+  --tw-prose-links: theme(colors.blue.400);
+  --tw-prose-code: theme(colors.gray.200);
+}
+
+.prose a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  color: theme(colors.blue.800);
+}
+
+.dark .prose a:hover {
+  color: theme(colors.blue.300);
+}
+
+/* Code blocks - Light mode */
+.prose pre {
+  background-color: theme(colors.gray.50);
+  border: 1px solid theme(colors.gray.200);
+  border-radius: 0.5rem;
+}
+
+.prose code {
+  background-color: theme(colors.gray.100);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+/* Code blocks - Dark mode */
+.dark .prose pre {
+  background-color: theme(colors.gray.800);
+  border-color: theme(colors.gray.700);
+}
+
+.dark .prose code {
+  background-color: theme(colors.gray.800);
+}
+
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+}
