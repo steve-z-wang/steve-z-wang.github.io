@@ -5,7 +5,7 @@ tags:
   - personal
   - writing
   - learning
-publishedAt: 2024-12-01
+publishedAt: 2025-05-13
 ---
 
 I've wanted to start a blog for a while.
