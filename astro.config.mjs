@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://steve-z-wang.github.io',
-  base: '/blog3',
+  base: '/blog/',
   integrations: [mdx()],
   vite: {
     plugins: [tailwindcss()],
