@@ -1,6 +1,6 @@
 ---
-title: "How I Built My Web Agent from Scratch"
-summary: "Why I built an LLM-powered browser automation tool that understands natural language instead of CSS selectors."
+title: "Building a Web Agent: Simpler Than You Think"
+summary: "Web agents seem complex, but the core idea is surprisingly simple. Here's how they work."
 tags:
   - technology
   - automation
@@ -10,24 +10,22 @@ publishedAt: 2025-12-03
 
 A while back, I was working on a side project that required automating some websites that didn't have public APIs.
 
-I started with Playwright, which is pretty much the industry standard for browser automation. But I quickly found the whole development process incredibly time-consuming. For example, just to click a simple button on a page, I had to open DevTools, carefully find the right selector, and then write a bunch of code like this:
+I started with Playwright, a popular library for controlling browsers programmatically. To interact with a page, you need a unique selector to identify each DOM element. That means opening DevTools, inspecting the HTML, proposing the right selector, and writing code like this:
 
 ```python
 await page.goto("https://example-shop.com")
-await page.click('[data-testid="search-input"]')
+await page.click('[data-testid="search-input"]')  # CSS selector
 await page.fill('[data-testid="search-input"]', "screwdriver")
 await page.click('[data-testid="search-button"]')
-await page.wait_for_selector('.product-item')
-await page.click('.product-item:first-child .add-to-cart')
 ```
 
-If the page structure changes one day, all this code might break. Forms are even worse—an endless stream of `fill`, `click`, and `select` operations. And don't even get me started on edge cases and error handling.
+The problems?
+- Selectors are fragile—developers rename `data-testid`, class names change, page structure shifts
+- You have to manually write every single step, which is time-consuming
 
-What I actually wanted to do was simple: "Log in to the website, search for a product, add it to the cart." But to accomplish this straightforward goal, I had to write dozens of lines of code.
+All I wanted was: "Log in, search for a product, add it to cart." But that required dozens of lines of brittle code.
 
-So I started thinking: since LLMs can already understand web content, why am I still manually writing all these tedious selectors?
-
-That's how WebTask was born.
+But here's the thing: LLMs can easily understand web pages. Give them a task like "click the login button" and they know what to do. That's the idea behind WebTask.
 
 ## Overview
 
@@ -37,9 +35,9 @@ Here's the same shopping cart example, but with WebTask:
 from webtask import Webtask
 from webtask.integrations.gemini import Gemini
 
-wt = Webtask()
-
 llm = Gemini(model="gemini-2.5-flash", api_key="your-api-key")
+
+wt = Webtask()
 agent = await wt.create_agent(llm=llm)
 
 await agent.goto("practicesoftwaretesting.com")
@@ -50,47 +48,79 @@ That's it. No selectors to write, no wait logic to handle, and no worrying about
 
 ## Under the Hood
 
-When you tell WebTask "click the login button," here's what happens:
+Here's what happens when you run a task:
 
-1. **DOM Processing**: WebTask captures the page's HTML and filters out noise—scripts, hidden elements, non-interactive content. Only the meaningful stuff remains.
+**1. DOM Processing**
 
-2. **Element ID Assignment**: Each interactive element gets a clean, human-readable ID like `button-0`, `textbox-1`, `link-2`. These IDs are based on the element's semantic role, not its CSS class or position.
+Raw HTML is messy. Here's what a simple login form actually looks like:
 
-3. **Context Building**: The processed DOM (with element IDs) plus a screenshot gets sent to the LLM.
+```html
+<div class="auth-wrapper mx-auto px-4">
+  <script>trackPageView('login')</script>
+  <form class="space-y-6" data-testid="login-form">
+    <div class="hidden"><!-- analytics pixel --></div>
+    <button type="button" class="btn-primary w-full">Sign In</button>
+    <input type="email" class="form-input" placeholder="Email" />
+    <input type="password" class="form-input" placeholder="Password" />
+    <button type="submit" class="btn-secondary">Submit</button>
+    <a href="/forgot" class="text-sm text-blue-600">Forgot password?</a>
+  </form>
+</div>
+```
 
-4. **LLM Decision**: The LLM understands the page and responds with something like "click element button-3".
+WebTask filters out scripts, hidden elements, and non-interactive content. Only the meaningful stuff remains.
 
-5. **Execution**: WebTask translates that element ID back to an XPath selector and executes the action in the browser.
+**2. Element ID Assignment**
 
-The key insight is that the LLM never sees raw HTML selectors like `div.container > button.primary[data-testid="submit"]`. Instead, it sees something like this:
+Each interactive element gets a simple ID based on its tag:
 
 ```
 [button-0] "Sign In"
-[textbox-1] Email input field
-[textbox-2] Password input field
+[input-1] Email input (placeholder: "Email")
+[input-2] Password input (placeholder: "Password")
 [button-3] "Submit"
-[link-4] "Forgot password?"
+[a-4] "Forgot password?"
 ```
 
-Clean, semantic, and easy for the LLM to reason about. This abstraction is what makes WebTask reliable—the LLM works with meaningful IDs while WebTask handles the messy DOM translation behind the scenes.
+**3. Context Building**
 
-## DOM Mode vs Visual Mode
+The processed DOM plus a screenshot gets sent to the LLM. This is key—the LLM sees both the structure (text) and the visual layout (image). It knows `button-3` is the submit button because it can read the label AND see where it is on the page.
+
+**4. LLM Decision**
+
+Given the task "log in with test@example.com", the LLM responds:
+
+```json
+{"action": "fill", "element_id": "input-1", "value": "test@example.com"}
+```
+
+**5. Execution**
+
+WebTask takes the LLM response, maps `input-1` to its XPath, and converts it to a Playwright action:
+
+```python
+await page.fill('/html/body/div/form/input[1]', "test@example.com")
+```
+
+The loop continues until the task is complete.
+
+## DOM Mode vs Pixel Mode
 
 WebTask supports two interaction modes:
 
-**Text Mode (DOM-based)** — The default. The LLM sees element IDs and the processed DOM text. Fast, uses fewer tokens, and works great for most websites.
+**DOM Mode** — The default. The LLM sees both the screenshot and processed DOM text, but interacts using element IDs. Fast, accurate, and works great for most websites.
 
-**Visual Mode (Pixel-based)** — The LLM sees screenshots with bounding boxes and clicks by coordinates. Better for complex layouts, canvas elements, or when the DOM structure is unusual.
+**Pixel Mode** — The LLM sees screenshots and clicks by coordinates. Works with computer use models that output x-y coordinates. Handles complex interactions that DOM mode can't reach—canvas elements, image-based CAPTCHAs, drag-and-drop challenges, or anything that doesn't map cleanly to DOM elements.
 
 You can also use both together for maximum accuracy.
 
-## Staying Reliable
+## On Building Reliable Workflows
 
-Initially, I considered whether I could just give the LLM a complete task description and let it handle everything end-to-end automatically. But in practice, I found that LLMs tend to make mistakes when handling long chains of tasks—the more steps, the higher the probability of something going wrong, and once it fails, it's hard to recover. Plus, the LLM might take a different path each time.
+I first tried letting the LLM handle entire workflows automatically. But LLMs make mistakes on long task chains—the more steps, the more likely something breaks. They're also unpredictable, taking different paths each time. And once it fails, recovery is hard.
 
-So WebTask is designed to let the agent **maintain memory across multiple tasks**. You can break down a complex workflow into fixed steps, calling each one separately, while the agent retains memory from previous steps.
+So WebTask lets agents **maintain memory across tasks**. Break a workflow into steps, call each separately, and the agent remembers context.
 
-Each step is relatively simple, so the LLM is less likely to make mistakes. Even if one step fails, you can restart from that step instead of starting over from scratch. More importantly, you can use `verify` after each step to confirm whether the operation succeeded, and `extract` to pull out key information for further validation:
+Simpler steps mean fewer mistakes. If one fails, restart from there. Use `verify` to check success, and `extract` to pull data for validation:
 
 ```python
 # Step 1: Search and add to cart
@@ -118,22 +148,20 @@ assert order.total_items == 2
 await agent.do("Fill in shipping address and submit order")
 ```
 
-This approach breaks a complex shopping workflow into three controllable steps, each with a checkpoint. Compared to having the LLM complete the entire flow in one go, this is much more stable, and problems are easier to locate and fix.
+Breaking workflows into steps with checkpoints makes them more stable and easier to debug.
 
 ## Use Cases
 
-Beyond specific web workflow automation, I've been using WebTask to handle some daily repetitive tasks. For example, batch job applications—opening job sites, searching positions, filtering by criteria, then clicking through to apply one by one. This kind of thing used to require either manual work or writing a bunch of fragile scraping code. Now it's just a few lines of Python.
+Beyond my side project, I plan to use WebTask for personal workflows—things like batch job applications, auto-filling forms, or scraping data from sites without APIs. Tasks that used to require manual work or fragile code.
 
-Another use case is end-to-end testing for my own web applications. Traditional E2E tests require maintaining tons of Playwright code, and tests break whenever the page changes. With WebTask, tests describe user behavior rather than DOM structure, so they're more stable and easier to maintain.
+It's also useful for E2E testing. Traditional tests break when pages change. WebTask tests describe user behavior, not DOM structure—more stable and easier to maintain.
 
 ## Get Started
 
-WebTask is still under active development. The code is open source on GitHub: [github.com/steve-z-wang/webtask](https://github.com/steve-z-wang/webtask)
-
-To get started:
+WebTask is open source: [github.com/steve-z-wang/webtask](https://github.com/steve-z-wang/webtask)
 
 ```bash
 pip install pywebtask
 ```
 
-If you have similar needs, or any thoughts and suggestions, feel free to try it out and reach out. If you have feature requests or interesting use cases, I'd love to discuss them.
+Try it out. Feedback and feature requests welcome.

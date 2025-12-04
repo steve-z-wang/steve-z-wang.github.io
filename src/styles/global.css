@@ -15,6 +15,7 @@
 .dark .prose {
   --tw-prose-body: theme(colors.gray.300);
   --tw-prose-headings: theme(colors.gray.100);
+  --tw-prose-bold: theme(colors.gray.100);
   --tw-prose-links: theme(colors.blue.400);
   --tw-prose-code: theme(colors.gray.200);
 }
