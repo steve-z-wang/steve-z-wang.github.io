@@ -19,11 +19,12 @@ export async function getStaticPaths() {
 }
 
 const { tag, posts } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title={`Posts tagged #${tag}`}>
   <div class="mb-8">
-    <a href="/" class="text-blue-600 dark:text-blue-400 hover:underline">&larr; All posts</a>
+    <a href={base} class="text-blue-600 dark:text-blue-400 hover:underline">&larr; All posts</a>
   </div>
 
   <h1 class="text-3xl font-bold mb-6">Posts tagged #{tag}</h1>
@@ -32,7 +33,7 @@ const { tag, posts } = Astro.props;
     {
       posts.map((post) => (
         <article class="group">
-          <a href={`/posts/${post.id}`} class="block">
+          <a href={`${base}posts/${post.id}`} class="block">
             <h2 class="text-xl font-semibold group-hover:text-blue-600 transition-colors">
               {post.data.title}
             </h2>

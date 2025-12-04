@@ -15,6 +15,7 @@ posts.forEach((post) => {
 
 // Sort tags alphabetically
 const sortedTags = [...tagCounts.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="Tags - sw.log">
@@ -24,7 +25,7 @@ const sortedTags = [...tagCounts.entries()].sort((a, b) => a[0].localeCompare(b[
     {
       sortedTags.map(([tag, count]) => (
         <a
-          href={`/tags/${tag}`}
+          href={`${base}tags/${tag}`}
           class="px-3 py-1 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full text-gray-700 dark:text-gray-300 transition-colors"
         >
           #{tag} <span class="text-gray-500 dark:text-gray-400">({count})</span>
