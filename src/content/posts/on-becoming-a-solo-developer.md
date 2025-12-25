@@ -70,3 +70,7 @@ I also want to thank my family—especially my girlfriend and my mom.
 Their support gave me the courage to take this step. Without their belief in me, this decision would have been much harder, if not impossible.
 
 I don’t know exactly where this year will lead—but I’m excited to find out.
+
+## Updates
+
+- **2025-12-26**: Major revision of content with an emphasis on what truly matters to me.
