@@ -10,39 +10,49 @@ publishedAt: 2025-12-15
 
 After a lot of reflection, I’ve decided to voluntarily leave Amazon and spend the next year (2025–2026) as a solo developer.
 
-I’m deeply grateful for my time at Amazon—for the people I worked with, and for the opportunity to learn how to build, operate, and scale real systems in production. Working there taught me rigor, ownership, and what it truly means to ship software that runs at scale. I’ll carry those lessons with me wherever I go.
+This is one of the most important decisions I’ve made on my own so far.
+
+I’m deeply grateful for my time at Amazon—for the people I worked with, and for the opportunity to learn how to build, operate, and scale real systems in production. I’ll carry those lessons with me wherever I go.
 
 Over time, though, I realized I wanted something different.
 
-## Why now
+## The Problem with Big Tech
 
-There are three reasons behind this decision.
+I value my time and I want to live a life with purpose; that means I want to spend my limited time doing meaningful things. But I don't think I was doing that in big tech.
 
-1. AI has fundamentally changed what small teams — and even individuals — can build
+A reality of big companies is that they often don't hire because they need people to create value for customers; they simply hire because they can afford to. This stems from a principal-agent problem: middle managers hire to increase their scope. Once there are more people, a monolith service is split into multiple microservices, making it easy for teams to contribute (e.g., separated deployment schedules). Then comes the debut of new cross-team collaboration work...
 
-We’re at a moment where a single developer can design, build, and ship products that previously required entire teams. AI doesn’t replace taste, judgment, or responsibility—but it dramatically lowers the cost of execution.
 
-I want to fully explore what this new leverage enables, especially in consumer apps where speed, iteration, and empathy matter more than perfect optimization.
+## Why Now and Why a Solo Developer
 
-2. I want full ownership of what I build
+### As a Defensive Career Strategy
 
-Ownership isn’t just about equity. It’s about responsibility, direction, and learning.
+In the age of AI, it is apparent that the bar for technical work has decreased dramatically, which I don't think bodes well for supply and demand dynamics.
 
-I want to make product decisions end-to-end:
-	•	What problem is worth solving
-	•	How the product should feel
-	•	What tradeoffs are acceptable
-	•	What not to build
+Since everything is changing so quickly, I believe a good defensive strategy is to understand the process end-to-end. I need not only technical skills but also product, marketing, and a broader range of abilities.
 
-I’ve realized that I learn fastest—and care most deeply—when I’m fully accountable for the outcome.
+I think understanding how value is created and knowing how to create it is a skill set that will always be valuable.
 
-3. I want to build toward a life with more long-term freedom
+So I want to put myself right into the market, directly facing the customers.
 
-This isn’t about escaping hard work. If anything, this path will be harder and more uncertain.
+I also find that I care the most when I take full accountability.
 
-But I want to invest my time in building assets—products, skills, and judgment—that compound over time. My goal is a life with more creative freedom, more agency, and more alignment between how I work and what I value.
+### Best Time to Learn and Work
 
-## What I’ll be working on
+The upside of AI is that it makes acquiring knowledge and completing work much more efficient. Work that once required 5 people can now be done by 1.
+
+
+## Choosing Freedom
+
+In the stock market, risk is often correlated with potential profit.
+
+The same is true in the career landscape (to some extent).
+Choosing stability means sacrificing some freedom.
+Choosing freedom means taking on more risk.
+
+I guess I value freedom more.
+
+## What I’ll Be Working On
 
 Over the next year, I’ll be focused on building thoughtful, human-centered consumer apps.
 
@@ -52,7 +62,6 @@ More soul. More care. More intentional design.
 
 I have a few early ideas in mind, but I’m intentionally leaving space to explore, learn, and adjust. The path is uncertain—but I’m confident it will be meaningful and memorable.
 
-This is one of the most important decisions I’ve made on my own so far.
 
 ## Gratitude
 
