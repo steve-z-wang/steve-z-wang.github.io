@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
 /* Prose customizations - Light mode */
 .prose {
   --tw-prose-body: theme(colors.gray.700);

@@ -26,9 +26,9 @@ const base = import.meta.env.BASE_URL;
       sortedTags.map(([tag, count]) => (
         <a
           href={`${base}tags/${tag}`}
-          class="px-3 py-1 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full text-gray-700 dark:text-gray-300 transition-colors"
+          class="px-3 py-1 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded-full text-neutral-700 dark:text-neutral-300"
         >
-          #{tag} <span class="text-gray-500 dark:text-gray-400">({count})</span>
+          #{tag} <span class="text-neutral-500 dark:text-neutral-400">{count}</span>
         </a>
       ))
     }
