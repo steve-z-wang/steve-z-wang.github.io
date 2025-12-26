@@ -1,6 +1,6 @@
 ---
-title: "Leaving Amazon to Become a Solo Developer (2025–2026)"
-summary: "After years at Amazon, I'm spending a year as a solo developer. Here's why."
+title: "On Becoming a Solo Developer"
+summary: "My reasons to quit Amazon and spend next year as a solo developer."
 tags:
   - personal
   - career
@@ -73,4 +73,4 @@ I don’t know exactly where this year will lead—but I’m excited to find out
 
 ## Updates
 
-- **2025-12-26**: Major revision of content with an emphasis on what truly matters to me.
+- **2025-12-26**: Major revision of content with an emphasis on what truly matters to me. Also updated title and summary. 

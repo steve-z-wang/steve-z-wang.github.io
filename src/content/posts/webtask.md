@@ -1,6 +1,6 @@
 ---
-title: "Building a Web Agent: Simpler Than You Think"
-summary: "Web agents seem complex, but the core idea is surprisingly simple. Here's how they work."
+title: "webtask"
+summary: "I created webtask, an easy-to-use llm-powered web automation library, for rapid web automation workflow prototyping"
 tags:
   - technology
   - automation
@@ -165,3 +165,7 @@ pip install pywebtask
 ```
 
 Try it out. Feedback and feature requests welcome.
+
+
+## Updates
+- **2025-12-26**: Updated title and summaries. 

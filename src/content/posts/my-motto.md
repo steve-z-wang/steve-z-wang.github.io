@@ -1,5 +1,5 @@
 ---
-title: "Be Humble. Be Authentic. Be Curious. Be Empathetic."
+title: "My Motto"
 summary: "This is a reminder to myself about the values I want to live by."
 tags:
   - personal
