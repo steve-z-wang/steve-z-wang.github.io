@@ -49,7 +49,7 @@ That's it. No selectors to write, no wait logic to handle, and no worrying about
 
 Here's what happens when you run a task:
 
-**1. DOM Processing**
+### DOM Processing
 
 Raw HTML is messy. Here's what a simple login form actually looks like:
 
@@ -69,7 +69,7 @@ Raw HTML is messy. Here's what a simple login form actually looks like:
 
 WebTask filters out scripts, hidden elements, and non-interactive content. Only the meaningful stuff remains.
 
-**2. Element ID Assignment**
+### Element ID Assignment
 
 Each interactive element gets a simple ID based on its tag:
 
@@ -81,11 +81,11 @@ Each interactive element gets a simple ID based on its tag:
 [a-4] "Forgot password?"
 ```
 
-**3. Context Building**
+### Context Building
 
 The processed DOM plus a screenshot gets sent to the LLM. This is key—the LLM sees both the structure (text) and the visual layout (image). It knows `button-3` is the submit button because it can read the label AND see where it is on the page.
 
-**4. LLM Decision**
+### LLM Decision
 
 Given the task "log in with test@example.com", the LLM responds:
 
@@ -93,7 +93,7 @@ Given the task "log in with test@example.com", the LLM responds:
 {"action": "fill", "element_id": "input-1", "value": "test@example.com"}
 ```
 
-**5. Execution**
+### Execution
 
 WebTask takes the LLM response, maps `input-1` to its XPath, and converts it to a Playwright action:
 
