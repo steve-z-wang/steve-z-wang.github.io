@@ -37,6 +37,16 @@ body {
   color: theme(colors.gray.400);
 }
 
+@keyframes blur-in {
+  from { opacity: 0; filter: blur(10px); }
+  to { opacity: 1; filter: blur(0); }
+}
+
+@keyframes blur-out {
+  from { opacity: 1; filter: blur(0); }
+  to { opacity: 0; filter: blur(10px); }
+}
+
 /* Code blocks - Light mode */
 .prose pre {
   background-color: theme(colors.gray.50);

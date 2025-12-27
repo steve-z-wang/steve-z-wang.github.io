@@ -17,6 +17,26 @@ const navItems = [
   { name: 'tags', href: 'tags' },
   { name: 'about', href: 'about' },
 ];
+
+const anim = {
+  old: {
+    name: 'blur-out',
+    duration: '0.3s',
+    easing: 'ease-out',
+    fillMode: 'forwards',
+  },
+  new: {
+    name: 'blur-in',
+    duration: '0.3s',
+    easing: 'ease-in',
+    fillMode: 'backwards',
+  }
+};
+
+const blur = {
+  forwards: anim,
+  backwards: anim,
+};
 ---
 
 <!doctype html>
@@ -78,7 +98,7 @@ const navItems = [
       </div>
     </nav>
 
-    <main class="flex-1 max-w-2xl mx-auto px-4 py-8 w-full" transition:animate="fade">
+    <main class="flex-1 max-w-2xl mx-auto px-4 py-8 w-full" transition:animate={blur}>
       <slot />
     </main>
 
