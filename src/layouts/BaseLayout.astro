@@ -63,7 +63,7 @@ const blur = {
   </head>
   <body class="bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
     <nav class="">
-      <div class="max-w-lg mx-auto px-4 py-4 flex items-center justify-between text-base">
+      <div class="max-w-xl mx-auto px-4 py-4 flex items-center justify-between text-base">
         <div class="flex items-center gap-3 lowercase">
           {navItems.map((item, index) => {
             const isActive = normalizedPath === item.href || 
@@ -90,12 +90,12 @@ const blur = {
       </div>
     </nav>
 
-    <main class="flex-1 max-w-lg mx-auto px-4 py-8 w-full" transition:animate={blur}>
+    <main class="flex-1 max-w-xl mx-auto px-4 py-8 w-full" transition:animate={blur}>
       <slot />
     </main>
 
     <footer class="">
-      <div class="max-w-lg mx-auto px-4 py-6 text-center text-gray-500 dark:text-gray-400 text-sm">
+      <div class="max-w-xl mx-auto px-4 py-6 text-center text-gray-500 dark:text-gray-400 text-sm">
         &copy; {new Date().getFullYear()} Steve Wang
       </div>
     </footer>
