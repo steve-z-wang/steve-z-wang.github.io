@@ -104,7 +104,8 @@ const blur = {
       const updateThemeText = () => {
         const text = document.getElementById('theme-text');
         if (text) {
-          text.textContent = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+          // Show the theme that we WILL switch to
+          text.textContent = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
         }
       };
 

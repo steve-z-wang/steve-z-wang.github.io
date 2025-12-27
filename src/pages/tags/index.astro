@@ -18,15 +18,20 @@ const sortedTags = [...tagCounts.entries()].sort((a, b) => b[1] - a[1] || a[0].l
 const base = import.meta.env.BASE_URL;
 ---
 
-<BaseLayout title="Tags - sw.log">
-  <div class="flex flex-wrap gap-3">
+<BaseLayout title="tags — sw.log">
+  <div class="space-y-6">
     {
       sortedTags.map(([tag, count]) => (
         <a
           href={`${base}tags/${tag}`}
-          class="px-3 py-1 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded-full text-neutral-700 dark:text-neutral-300"
+          class="flex items-baseline gap-3 group"
         >
-          #{tag} <span class="text-neutral-500 dark:text-neutral-400">{count}</span>
+          <span class="text-xl font-semibold group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors lowercase">
+            #{tag}
+          </span>
+          <span class="text-gray-400 dark:text-gray-500">
+            {count}
+          </span>
         </a>
       ))
     }
