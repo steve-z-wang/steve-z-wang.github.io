@@ -8,6 +8,8 @@ publishedAt: 2025-05-13
 
 I've wanted to start a blog for a while.
 
+## Creative Roots
+
 Looking back, I've always had a need to create and share. I spent years with a camera—from high school through graduate school—learning to connect ideas and feelings into something unique. I loved explaining the story behind every shot.
 
 In high school, I also loved writing. I remember the thrill of texting friends for feedback and taking a poetry class in my final year of college. It wasn't standard for a computer science student, but I loved the sessions where I could read my work aloud and hear how others responded.
