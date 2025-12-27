@@ -3,8 +3,6 @@ title: "Hello World"
 summary: "Thoughts on writing, learning, and growing."
 tags:
   - personal
-  - writing
-  - learning
 publishedAt: 2025-05-13
 ---
 

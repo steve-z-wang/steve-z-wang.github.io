@@ -4,7 +4,6 @@ summary: "Reflections on leaving big tech for solo development."
 tags:
   - personal
   - career
-  - ai
 publishedAt: 2025-12-15
 ---
 

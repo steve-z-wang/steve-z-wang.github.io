@@ -2,7 +2,6 @@
 title: "WebTask"
 summary: "An LLM-powered library for rapid web automation prototyping."
 tags:
-  - technology
   - automation
   - ai
 publishedAt: 2025-12-03
