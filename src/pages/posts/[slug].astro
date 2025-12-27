@@ -27,7 +27,7 @@ const base = import.meta.env.BASE_URL;
         {post.data.tags.length > 0 && (
           <div class="flex gap-2">
             {post.data.tags.map((tag) => (
-              <a href={`${base}tags/${tag}`} class="hover:text-blue-600 dark:hover:text-blue-400">
+              <a href={`${base}tags/${tag}`} class="hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
                 #{tag}
               </a>
             ))}
