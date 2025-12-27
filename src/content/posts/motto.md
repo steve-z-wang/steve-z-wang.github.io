@@ -1,5 +1,5 @@
 ---
-title: "My Motto"
+title: "Motto"
 summary: "This is a reminder to myself about the values I want to live by."
 tags:
   - personal
