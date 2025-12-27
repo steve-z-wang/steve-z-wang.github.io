@@ -19,7 +19,7 @@ const base = import.meta.env.BASE_URL;
 <BaseLayout title={post.data.title} description={post.data.summary}>
   <article>
     <header class="mb-8">
-      <h1 class="text-xl font-bold mb-2">{post.data.title}</h1>
+      <h1 class="text-base font-semibold mb-2">{post.data.title}</h1>
       <div class="flex items-center gap-4 text-gray-500 dark:text-gray-400">
         <time datetime={post.data.publishedAt.toISOString()}>
           {post.data.publishedAt.getUTCFullYear()}.{String(post.data.publishedAt.getUTCMonth() + 1).padStart(2, '0')}.{String(post.data.publishedAt.getUTCDate()).padStart(2, '0')}
