@@ -1,6 +1,6 @@
 ---
-title: "webtask"
-summary: "I created webtask, an easy-to-use llm-powered web automation library, for rapid web automation workflow prototyping"
+title: "WebTask"
+summary: "An LLM-powered library for rapid web automation prototyping."
 tags:
   - technology
   - automation
