@@ -8,56 +8,21 @@ publishedAt: 2025-05-13
 
 I've wanted to start a blog for a while.
 
-## Self Expression
+Looking back, I've always had a need to create and share. I spent years with a camera—from high school through graduate school—learning to connect ideas and feelings into something unique. I loved explaining the story behind every shot.
 
-Looking back, I've always wanted to express myself—to create, share, and see how others respond.
+In high school, I also loved writing. I remember the thrill of texting friends for feedback and taking a poetry class in my final year of college. It wasn't standard for a computer science student, but I loved the sessions where I could read my work aloud and hear how others responded.
 
-I used to love photography. I bought my first camera in high school and kept taking photos through graduate school. I'm not a professional, but I think I'm a good amateur. I can connect ideas and feelings to create something unique. I loved sharing photos with friends and explaining the story behind each one. I posted some on social media too.
+Lately, that creative space has been filled by the noise of tech—AI, business models, and constant growth. It’s constant anxiety. I often send friends long, unstructured messages full of random thoughts. I figured it would be better to write them here.
 
-In high school, I also loved writing. I wrote a few short pieces that still surprise me when I read them today—they seem better than what I thought a high schooler could write. I remember texting my best friends for feedback. Their approval made me want to write more.
+## Writing as Thinking
 
-In my last year of college, I took a poetry writing class. Not many computer science students would do that. My work wasn't great (some pieces were awkward), but I loved the sessions where I could read my poems aloud and get feedback.
+I've found that if I consume too much without responding, it all becomes noise. 
 
-These days, I don't take photos or write much anymore. Sometimes I'll write a short piece when I really have to (usually when I'm feeling sentimental).
+One key idea from the book *Make It Stick* is that **recall makes for better learning**. Writing is a form of recall. When I explain an idea in my own words, I am forced to reconstruct the logic from scratch. This process is how thoughts truly stick. 
 
-Instead, like many people in tech, my mind is filled with topics like self-improvement, AI, business ideas, and growth. There's always a fear of missing out. It's constant anxiety. I often send my friends long messages full of random thoughts (sorry if you're reading this). So I figured it would be better to write things down.
-
-Besides being an outlet for thoughts, here are other good reasons why I'm starting this blog.
-
-## Other Benefits
-
-### To Learn Better
-
-I listened to an audiobook called _Make It Stick_. One key idea: **remembering things makes your memory stronger**. When you try to recall something without looking it up, you make your brain remember it better.
-
-Writing is a form of remembering. When I sit down to explain an idea in my own words, I'm not just recalling it—I'm taking raw information and making it my own. That process helps me really understand what I've learned.
-
-I've found that if I read too much without thinking about it, it all becomes noise. But when I take time to write and connect ideas, I remember more and understand better.
-
-Sometimes I think humans are like AI models. To train an AI well, you feed it data and update it based on the output. I think people work the same way: we read and learn, but we also need to create something in response. That output becomes feedback—it helps train our brains to think more clearly.
-
-### To Organize My Thoughts and Stay Focused
-
-Like I said earlier, I often have so many thoughts racing through my head that I can't focus—thinking about five things at once. This year, I started taking daily notes, which helped. I would just dump my thoughts with no structure, just to get them out.
-
-This blog is a step further. It not only helps me get thoughts out of my head—it helps organize them. It's like cleaning a messy room: you finally see what's there and where everything belongs.
-
-Having fewer messy thoughts in my head helps me focus. When your brain is overloaded, it's hard to concentrate or build on what you already know. Writing clears that space.
-
-### To Stay Motivated by Showing My Work
-
-As I mentioned earlier, I've always enjoyed sharing my work with others. It motivates me to keep learning and creating.
-
-It also makes me take my work more seriously. When you know others will see what you create, you feel more responsible for it. It becomes part of who you are.
-
-### To Build Leverage
-
-Another reason I'm starting this blog is for leverage. Sharing an idea in person might take hours, but writing it once and posting it online takes about the same effort and can reach far more people.
-
-In the long run, it also helps with personal branding—something that builds over time.
-
-### To Connect
-
-I hope this blog helps me connect with people who think about similar things—or even people with different views. I love learning how others see the world.
+Humans are like AI models: we need to create output to train our brains to think clearly. Writing is the act of cleaning a messy room—it helps me see where every thought belongs and clears space for new ideas. It’s also a way to build leverage, turning a single thought into a permanent asset that can reach and connect with others.
 
 Thanks for reading my first post. More to come soon.
+
+## Updates
+- **2025.12.28**: Major revision of content for better focus and narrative flow.
