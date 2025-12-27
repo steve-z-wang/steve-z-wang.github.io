@@ -4,7 +4,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 body {
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Newsreader', serif;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
