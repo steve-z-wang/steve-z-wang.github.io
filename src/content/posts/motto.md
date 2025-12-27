@@ -6,7 +6,7 @@ tags:
 publishedAt: 2025-12-26
 ---
 
-This blog is a reminder to myself for the values I would like to live by.
+A reminder to myself of the values I want to live by.
 
 ## Be Authentic
 
