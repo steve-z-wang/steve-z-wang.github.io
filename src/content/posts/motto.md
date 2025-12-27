@@ -1,6 +1,6 @@
 ---
 title: "Motto"
-summary: "This is a reminder to myself about the values I want to live by."
+summary: "The core values I want to live by."
 tags:
   - personal
 publishedAt: 2025-12-26

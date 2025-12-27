@@ -1,6 +1,6 @@
 ---
 title: "On Becoming a Solo Developer"
-summary: "My reasons to quit Amazon and spend next year as a solo developer."
+summary: "Reflections on leaving big tech for solo development."
 tags:
   - personal
   - career

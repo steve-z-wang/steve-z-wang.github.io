@@ -1,6 +1,6 @@
 ---
 title: "Hello World"
-summary: "First blog. Thoughts on writing, learning, and growing—written to understand and connect."
+summary: "Thoughts on writing, learning, and growing."
 tags:
   - personal
   - writing
