@@ -10,26 +10,39 @@ A reminder to myself of the values I want to live by.
 
 ## Be Authentic
 
-I can hardly live without authenticity anymore.
-
-It means not wanting things — or trying to be something — just because everyone else is doing it.
+It means not doing or wanting things just because everyone else does.
 
 It means seeking only what I love and what I value the most.
 
 ## Be Humble
 
-Ego never helps. It tricks me into feeling good, making me think I am better than others. It is not true, and I need to always be alert to it.
 
-We never know the full answer. There is always something we don't know.
+
+Ego is a trap. It offers a false sense of superiority. Comparing myself to others is a status game I cannot win—and it kills authenticity.
+
+
+
+We never know the full answer. There is always something we don't know. You might be wrong at the same time you are right. 
 
 Stop talking. Listen. Listen deeply.
 
 ## Be Curious
 
-The real world is messy. To understand it, we need to see it from many different perspectives and through multiple disciplines.
+
+
+The world is messy. To understand it, we need multiple perspectives and disciplines.
 
 Innovation comes from understanding the problem deeply. This requires a strong mental model of how the world actually works. We cannot solve what we do not understand.
 
+## Be Patient
+
+
+
+Respect time. Trust the power of compounding. 
+
 ## Be Empathetic
 
-Great products come from deeply caring about the people who use them. Great care comes from empathy. 
+
+
+Great products require deep care for their users. Care requires empathy. 
+
