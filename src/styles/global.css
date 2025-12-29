@@ -23,6 +23,8 @@ body {
   --tw-prose-bold: theme(colors.gray.100);
   --tw-prose-links: theme(colors.gray.100);
   --tw-prose-code: theme(colors.gray.200);
+  --tw-prose-quotes: theme(colors.gray.300);
+  --tw-prose-quote-borders: theme(colors.gray.600);
 }
 
 .prose a {
