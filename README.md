@@ -2,7 +2,7 @@
 
 Personal blog built with [Astro](https://astro.build/).
 
-Live at: https://steve-z-wang.github.io/blog/
+Live at: https://steve-z-wang.github.io/
 
 ## Tech Stack
 

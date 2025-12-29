@@ -11,12 +11,12 @@ export async function GET(context: APIContext) {
   return rss({
     title: 'sw.log',
     description: "Steve Wang's Blog: Thoughts on technology, learning, and building things",
-    site: new URL('/blog/', context.site!).href,
+    site: context.site!.href,
     items: sortedPosts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.publishedAt,
       description: post.data.summary,
-      link: `/blog/posts/${post.id}`,
+      link: `/posts/${post.id}`,
     })),
   });
 }
