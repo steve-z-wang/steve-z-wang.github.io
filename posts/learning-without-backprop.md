@@ -29,7 +29,7 @@ Can we train neural networks this way?
 
 ## The Algorithm
 
-GRLU (Global Reward Local Updates) replaces the backward pass with two forward passes:
+GRLU (Global Reward Local Updates) tries to mimic this. It replaces the backward pass with two forward passes:
 
 1. Run the network with small positive noise added to neuron outputs
 2. Run it again with negative noise (the opposite perturbation)
@@ -38,7 +38,7 @@ GRLU (Global Reward Local Updates) replaces the backward pass with two forward p
 
 Why two passes? Think of training as finding the lowest point in a landscape, where lower means less error. It's like being blindfolded and trying to walk downhill. You step one direction, then the opposite. Whichever felt lower tells you which way to go. With just one step, you only know where you are—not which direction leads down. The comparison creates the learning signal.
 
-Each layer only needs to know two things: what noise did I add, and did overall performance improve? That's it. The global reward signal ("this was better") combined with local information ("I added positive noise") is enough to learn.
+Each layer only needs to know two things: what noise did I add, and did overall performance improve? That's it. Global reward plus local information—just like dopamine modulating Hebbian learning in the brain.
 
 ## Results
 
@@ -64,18 +64,20 @@ When there are many layers with thousands of neurons, the global reward signal g
 
 Backprop solves this elegantly—it computes exactly how much each layer contributed. But that requires the backward pass we're trying to avoid.
 
+So we're stuck: local learning works for shallow networks but fails at depth. How does the brain handle this?
+
 ## What This Tells Us About the Brain
 
-Here's what's interesting: the brain faces the same limitation. Yet it clearly works. How?
+The brain faces the same limitation. Yet it clearly works. How?
 
-The answer is that biology doesn't use one learning algorithm—it uses two:
+The answer: biology doesn't use one learning algorithm—it uses two:
 
 | System | Brain Region | Algorithm | Timescale |
 | ------ | ------------ | --------- | --------- |
 | Feature extraction | Neocortex | Evolution Strategy | Millions of years |
 | Fast memory | Hippocampus | Hebbian learning | Milliseconds |
 
-Evolution Strategy is named after biological evolution for a reason—both work the same way: random mutations, keep what survives. Your visual cortex wasn't learned in your lifetime; it was shaped over millions of years of evolutionary pressure. The basic features—edges, shapes, faces—came pre-installed at birth.
+Remember Evolution Strategy from the results section? It turns out biological evolution works the same way—random mutations, keep what survives. Your visual cortex wasn't learned in your lifetime; it was shaped over millions of years of evolutionary pressure. The basic features—edges, shapes, faces—came pre-installed at birth.
 
 Hebbian learning then handles fast adaptation on top of this frozen foundation. You can learn a new face in seconds because you're not learning to see from scratch—you're just forming new associations in a space that evolution already structured.
 
