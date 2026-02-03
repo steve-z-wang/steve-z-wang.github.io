@@ -5,7 +5,7 @@ tags:
   - technology
   - machine learning
   - neuroscience
-publishedAt: 2025-02-03
+publishedAt: 2026-02-03
 ---
 
 ## The Problem with Backprop
