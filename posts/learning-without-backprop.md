@@ -11,7 +11,7 @@ publishedAt: 2026-02-03
 
 Modern neural networks learn through backpropagation. When the network makes a mistake, the error flows backward through every layer, and all weights get updated globally.
 
-This works remarkably well, but causes **catastrophic forgetting**—updating all weights based on new data can erase what was learned before. Train a network on cats, then train it on dogs, and it forgets cats.
+This works remarkably well, but the global updates cause **catastrophic forgetting**—when all weights change based on new data, the network erases what it learned before. Train it on cats, then train it on dogs, and it forgets cats.
 
 The brain doesn't have this problem. How does it learn?
 
