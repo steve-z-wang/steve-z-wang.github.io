@@ -2,8 +2,7 @@
 title: "Learning Without Backprop"
 summary: "Exploring biologically plausible alternatives to backpropagation using local learning rules."
 tags:
-  - technology
-  - machine learning
+  - ml
   - neuroscience
 publishedAt: 2026-02-03
 ---
