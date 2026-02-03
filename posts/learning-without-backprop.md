@@ -9,15 +9,11 @@ publishedAt: 2026-02-03
 
 ## The Problem with Backprop
 
-Modern neural networks learn through backpropagation. When the network makes a mistake, the error flows backward through every layer, telling each weight exactly how to change.
+Modern neural networks learn through backpropagation. When the network makes a mistake, the error flows backward through every layer, and all weights get updated globally.
 
-This works remarkably well, but has two problems:
+This works remarkably well, but causes **catastrophic forgetting**—updating all weights based on new data can erase what was learned before. Train a network on cats, then train it on dogs, and it forgets cats.
 
-1. **The brain doesn't do this.** There's no known biological mechanism for sending precise error signals backward through neurons.
-
-2. **Catastrophic forgetting.** Updating all weights globally based on new data can erase what was learned before. Train a network on cats, then train it on dogs, and it forgets cats.
-
-So how does the brain learn?
+The brain doesn't have this problem. How does it learn?
 
 ## Global Reward, Local Updates
 
