@@ -36,6 +36,8 @@ GRLU (Global Reward Local Updates) replaces the backward pass with two forward p
 3. Compare: which one performed better?
 4. Update weights in the direction that helped
 
+Why two passes? With just one pass, we only know the result—not whether it was good or bad. By comparing +noise vs -noise, we learn which direction helps. The comparison creates the learning signal.
+
 Each layer only needs to know two things: what noise did I add, and did overall performance improve? That's it. The global reward signal ("this was better") combined with local information ("I added positive noise") is enough to learn.
 
 ## Results
