@@ -4,52 +4,94 @@ import "../styles/global.css";
 const base = import.meta.env.BASE_URL;
 ---
 
-<BaseLayout title="projects — sw.log">
-  <div>
-    <p class="text-gray-500 dark:text-gray-400 mb-8">Things I've built.</p>
+<BaseLayout title="work — sw.log">
+  <div class="space-y-12">
+    <section>
+      <h2 class="text-gray-500 dark:text-gray-400 mb-6 lowercase">Publications</h2>
+      <div class="space-y-8">
+        <div>
+          <p class="font-semibold m-0">Graceful Forgetting via State-Readout Distillation, 2026</p>
+          <div class="flex gap-4 mt-2">
+            <a
+              href="https://github.com/steve-z-wang/state-readout-distillation"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+            >
+              github
+            </a>
+          </div>
+        </div>
 
-    <div class="space-y-8">
-      <div>
-        <p class="font-semibold m-0">WebTask</p>
-        <p class="text-gray-500 dark:text-gray-400 mt-2">
-          LLM-powered library for web automation. Describe what you want in
-          plain English, skip the selectors.
-        </p>
-        <div class="flex gap-4 mt-2">
-          <a
-            href="https://github.com/steve-z-wang/webtask"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="underline"
-          >
-            github
-          </a>
-          <a
-            href={`${base}posts/webtask`}
-            class="underline"
-          >
-            read more
-          </a>
+        <div>
+          <p class="font-semibold m-0">A Single-Layer Model Can Do Language Modeling, 2026</p>
+          <div class="flex gap-4 mt-2">
+            <a
+              href="https://github.com/steve-z-wang/grounded-prediction-network"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+            >
+              github
+            </a>
+            <a
+              href="https://arxiv.org/abs/2605.10643"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+            >
+              arxiv
+            </a>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div>
-        <p class="font-semibold m-0">Kuuki</p>
-        <p class="text-gray-500 dark:text-gray-400 mt-2">
-          AI-powered cross-listing tool for resellers. Photograph once, list
-          everywhere.
-        </p>
-        <div class="flex gap-4 mt-2">
-          <a
-            href="https://kuuki.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="underline"
-          >
-            kuuki.app
-          </a>
+    <section>
+      <h2 class="text-gray-500 dark:text-gray-400 mb-6 lowercase">Projects</h2>
+      <div class="space-y-8">
+        <div>
+          <p class="font-semibold m-0">WebTask</p>
+          <p class="text-gray-500 dark:text-gray-400 mt-2">
+            LLM-powered library for web automation. Describe what you want in
+            plain English, skip the selectors.
+          </p>
+          <div class="flex gap-4 mt-2">
+            <a
+              href="https://github.com/steve-z-wang/webtask"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+            >
+              github
+            </a>
+            <a
+              href={`${base}posts/webtask`}
+              class="underline text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+            >
+              read more
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <p class="font-semibold m-0">Kuuki</p>
+          <p class="text-gray-500 dark:text-gray-400 mt-2">
+            AI-powered cross-listing tool for resellers. Photograph once, list
+            everywhere.
+          </p>
+          <div class="flex gap-4 mt-2">
+            <a
+              href="https://kuuki.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+            >
+              kuuki.app
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </BaseLayout>
